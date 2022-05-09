@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquete</title>
+    <style>
+        body{
+            margin: auto;
+            text-align: center;
+            height: 300px;
+            width: 300px;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+        }
+        .circulo{
+            background-color: orange;
+            text-align: center;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            font-size: xx-large;
+            justify-items: center;
+            color: black;
+            height: 350px;
+            width: 350px;
+            border-radius: 60%;
+            margin: auto;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .sim {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+          border-radius: 20%;
+            text-align: center;
+            text-decoration: none;
+            
+            color: #fff;
+            background-color: green;
+            border: none;
+     
+            
+        }
+
+        .sim:hover {background-color: green}
+
+        .sim:active {
+            background-color: green;
+
+            transform: translateY(4px);
+        }
+        .nao {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            
+            color: #fff;
+            background-color: red;
+            border: none;
+            border-radius: 20%;
+        
+        }
+
+        .nao:hover {background-color: red}
+
+        .nao:active {
+            background-color: red;
+            transform: translateY(4px);
+        }
+        .final{
+            color: #1B1464;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        #ify{
+            background-color: #2ecc71;
+            width: 10px;
+            text-align: center;
+            color: black;
+            align-items: center;
+        }
+        #ifn{
+            background-color: #e67e22;
+            width: 10px;
+            text-align: center;
+            color: black;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+  <div class="circulo">
+     Você esta gostando da escola EEEP AMELIA FIGUEIREDO DE LAVOR?
+  </div>
+  <p></p>
+  <button type="button" class="sim" onclick="resultadoSim()">SIM</button>
+  <button type="button" class="nao" onclick="resultadoNao()">NÃO</button>
+  <p></p>
+  <div class="final">Resultado:</div>
+  <div class="final">Sim</div>
+  <div id="ify">0</div>
+  <div class="final">Não</div>
+  <div id="ifn">0</div>
+  <script>
+    let incremento = 0;
+    let largura = 0;
+    let mover = 520;
+    let cont = 0;
+    let largura2 = 0;
+    let getval1 = 5;
+    let getval2 = 5;
+ function resultadoSim(){
+    incremento++;
+    largura = largura + 20;
+    document.getElementById("ify").innerHTML = incremento;
+    document.querySelector("#ify").style.width = largura+"px";
+    if (incremento > getval2){
+        getval1 = incremento;
+        mover = mover - 8;
+        document.querySelector(".final").style.left = mover+"px";
+        document.querySelector("#ify").style.left = mover+"px";
+        document.querySelector("#ifn").style.left = mover+"px";
+        document.querySelector("#nao").style.left = mover+"px";
+        document.querySelector("#sim").style.left = mover+"px";
+    } 
+    
+   
+}   
+
+function resultadoNao(){
+    cont++;
+    document.getElementById("ifn").innerHTML = cont;
+    largura2 = largura2 + 20;
+    document.querySelector("#ifn").style.width = largura2+"px";
+    if (cont > getval1){
+        getval2 = cont;
+        mover = mover - 8;
+        document.querySelector(".final").style.left = mover+"px";
+        document.querySelector("#ify").style.left = mover+"px";
+        document.querySelector("#ifn").style.left = mover+"px";
+        document.querySelector("#nao").style.left = mover+"px";
+        document.querySelector("#sim").style.left = mover+"px";
+    }
+}
+
+
+  </script>  
+</body>
+</html>
